@@ -1,7 +1,8 @@
-import express from "express";
-import bodyParser from "body-parser";
-import cors from "cors";
-import userRoutes from "./routes/users.js";
+const express = require("express")
+const bodyParser = require("body-parser")
+const cors = require("cors")
+const userRoutes = require("./routes/users")
+const path = require("path")
 
 const app = express();
 const port = 5000;
@@ -9,8 +10,7 @@ const port = 5000;
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use("/", userRoutes);
-app.get("/", (req, res) => res.send("Hello from Express"));
+app.use(userRoutes);
 
 if (process.env.NODE_ENV === "production") {
     //Set static folder
