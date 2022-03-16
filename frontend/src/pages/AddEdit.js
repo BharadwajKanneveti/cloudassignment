@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './AddEdit.css';
 import { toast } from 'react-toastify';
@@ -25,7 +25,7 @@ const AddEdit = () => {
     const getSingleUser = async (id) => {
         const response = await axios.get(`/user/${id}`);
         if (response.status === 200) {
-            setData({ ...response.data[0] });
+            setData({ ...response.data });
         }
     };
 

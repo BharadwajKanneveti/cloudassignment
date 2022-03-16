@@ -54,11 +54,11 @@ const Home = () => {
                                 <td>{item.email}</td>
                                 <td>{item.contact}</td>
                                 <td>
-                                    <Link to={`/update/${item.id}`}>
+                                    <Link to={`/update/${item._id}`}>
                                         <button className="btn btn-edit">Edit</button>
                                     </Link>
-                                    <button className="btn btn-delete" onClick={() => onDeleteUser(item.id)}>Delete</button>
-                                    <Link to={`/view/${item.id}`}>
+                                    <button className="btn btn-delete" onClick={() => onDeleteUser(item._id)}>Delete</button>
+                                    <Link to={`/view/${item._id}`}>
                                         <button className="btn btn-view">View</button>
                                     </Link>
                                 </td>
@@ -69,7 +69,6 @@ const Home = () => {
             </table>
         </div>
     );
-
-
 };
+
 export default Home;
